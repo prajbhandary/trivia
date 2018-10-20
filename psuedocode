@@ -54,3 +54,28 @@ display (
     'd.' + optionTemp[3]
 
 )
+
+
+on click listener {
+
+	once clicked then call verify()
+}
+
+function verify(){
+
+	if answer is selected == correct answer {
+		append div  "right answer"
+	}
+
+	delay 3 seconds
+	
+	go to resetgame();
+
+
+}
+
+	
+
+
+
+
