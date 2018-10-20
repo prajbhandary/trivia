@@ -343,10 +343,11 @@ function prepare(){
 			//answer.attr( "class","answers")
 			$("#timer").empty();
 			timesUp.text(" Nothing selected times up ")
-			loss++;
+			
 		$("#everything").empty();	
 		$("#everything").append(timesUp).append('<br/>');
 		if(converted > timeLimit+3){
+			loss++;
 			// setInterval(function(){ prepare() }, 3000);;
 			prepare();
 		}
