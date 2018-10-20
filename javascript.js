@@ -342,7 +342,8 @@ function prepare(){
 		var timesUp = $('<div>')
 			//answer.attr( "class","answers")
 			$("#timer").empty();
-			timesUp.text(" Nothing selected times up ")
+			timesUp.attr('id','timesup')
+			timesUp.text(" Nothing was selected times up ")
 			
 		$("#everything").empty();	
 		$("#everything").append(timesUp).append('<br/>');
@@ -406,8 +407,14 @@ function endGame(){
 	$("#timer").empty();
 	$("#timer").append("Game Over");
 	$("#everything").empty();	
-	$("#everything").append("correct answers :"+  win +'<br/>');
-	$("#everything").append("wrong answers :"+  loss +'<br/>');
+	var final = $("<div>");
+	final.attr('id','results');
+	final.text("Correct answers :"+  win);
+	$("#everything").append(final)
+	var final2 = $("<div>");
+	final2.attr('id','results');
+	final2.text("Wrong answers :"+  loss);
+	$("#everything").append(final2);
 	clockRunning = false;
 	clearInterval(intervalId);
 }
